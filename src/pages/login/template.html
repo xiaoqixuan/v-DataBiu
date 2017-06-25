@@ -1,0 +1,45 @@
+<div class="page-container">
+    <div class="logo-wrap">    
+        <router-link to="/login">
+            <img :src="!userAgent ? '/imgs/logo.png' : '/imgs/logo_big.png'">
+        </router-link>
+    </div>
+    <div class="login-wrap">
+        <span class="title">登&nbsp;&nbsp;录</span>
+        <div class="input-wrap">
+            <!-- 手机号 -->
+            <div class="input-user group">
+                <input @blur="checkvalue($event,user.name);" v-model="user.name.value" class="form-control" type="text" :placeholder="user.name.label" />
+                <i v-if="user.name.isPass" class="attention-icon i-ok"></i>
+                <span v-if="!user.name.isPass" class="err-tip">{{user.name.tooltip}}</span>
+            </div>
+            
+            <!-- 图形验证码 -->
+            <div class="input-code group">
+                <input @blur="checkCode($event,user.code);" v-model="user.code.value"  class="form-control" type="text" :placeholder="user.code.label" />
+                <img @click="changeCode($event);" class="code" :src="codeUrl">
+                <i v-if="user.code.isPass" class="attention-icon i-ok"></i>
+                <span v-if="!user.code.isPass" class="err-tip">{{user.code.tooltip}}</span>
+            </div>            
+
+            <!-- 手机验证码 -->
+            <div class="input-phonecode group">
+                <input  @keyup.enter="doLogin($event);" v-model="identifyingCode.value" class="form-control phonecode-input" type="text" placeholder="手机验证码" />
+                <!-- <span v-if="!identifyingCode.isSend" class="form-control phonecode-text">手机验证码</span> -->
+
+                <a v-if="!identifyingCode.isSend" @click="getPhonecode($event);" class="sendcode" href="javascript:;">{{codeText || "获取验证码"}}</a>
+                <span v-if="identifyingCode.isSend" class="chronography">{{deadline}}s后重新发送</span>
+
+                <!-- <i v-if="identifyingCode.isSend && identifyingCode.isPass" class="attention-icon i-ok"></i> -->
+                <span v-if="!identifyingCode.isPass" class="err-tip">{{identifyingCode.tooltip}}</span>
+            </div>
+            <div class="footer">
+                <span v-if="!isloging" @click="doLogin($event);" class="button button-primary">登&nbsp;&nbsp;录</span>
+                <span v-if="isloging" class="button button-disabled">登录中...</span>
+            </div>
+        </div>
+    </div>
+
+    <img class="vip" :class="{'normal':userAgent,'small':!userAgent}" :src="!userAgent ? '/imgs/ditu.png' : '/imgs/vip.png'">
+
+</div>

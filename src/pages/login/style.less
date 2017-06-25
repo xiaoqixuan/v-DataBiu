@@ -1,0 +1,234 @@
+
+@blue: #1970e3;
+#blue-color{
+    color: @blue;
+}
+
+/*.logo-wrap {
+    padding: 16vh 0 10vh;     
+    text-align: center;  
+    background: url(./img/banner.jpg) center no-repeat;
+    background-size: cover;
+    .logo{
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        background: url(./img/logo.png) center no-repeat;
+        background-size: cover;
+    }
+    .title {
+        margin-top: 10px;
+        font-size: 22px;
+        color: #fff;        
+    }
+}
+.color-green{
+    color: @green;
+}
+[type="checkbox"], [type="radio"] {
+    vertical-align: middle;
+}
+// 登录框
+.login-wrap {
+    width: 300px;
+    padding: 10vh 0;
+    border-radius: 15px;
+    margin: 0 auto;
+    .title {
+        font-size: 22px;
+        color: #fff;
+        text-align: center;
+    }
+    .input {
+        margin: 0 auto;
+        width: 300px;
+        .group {
+            position: relative;
+            margin-bottom: 24px;   
+            width: 310px;            
+            .group-name {
+                font-size: 12px;
+                color: #333;
+            }
+            label{
+                font-weight: normal;
+            }
+            .form-control {    
+			    margin-top: 10px;
+			    padding: 10px;
+            	width: 100%;
+			    height: 40px;
+			    font-size: 12px;
+			    color: #999;
+			    border: 1px solid #aeaeae;
+			    border-radius: 2px;
+                &:focus {
+                    border-color: @green !important;
+                    color: #686868;
+                }
+            }
+            .err-tip { // 成功
+                position: absolute;
+                top: 38px;
+                right: 10px;
+                z-index: 1;
+                font-size: 12px;
+                color: #ff8b08;
+            }
+            .float-right {
+            	float: right;
+            }
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            .btn {
+            	display: inline-block;
+                width: 310px;
+                height: 40px;
+                font-size: 14px;
+                color: #fff;
+                line-height: 40px;
+                border-radius: 2px;
+                background: @green;
+            }
+        }
+    }
+}*/
+.page-container {
+    background:url("/imgs/login_bg.png") no-repeat;    
+    background-size: cover;
+    // logo
+    .logo-wrap {
+        padding: 10px 0 0 20px;
+        .icon-logo {
+            display: inline-block;
+            img {
+                height: auto;
+            }
+        } 
+        .small {
+            display: none;
+        }
+    }
+    // 登录框
+    .login-wrap {
+        // background: url("/imgs/vip.png") 0 0 no-repeat;
+        position: absolute;
+        top: 25vh;
+        left: 10%;
+        z-index: 2;
+        width: 80%;
+        height: 50vh;
+        background-color: rgba(0, 0, 0, .12); 
+        .title {
+            position: absolute;
+            top: -44px;
+            left: 50%;
+            margin-left: -44px;
+            width: 88px;
+            height: 88px;
+            line-height: 88px;
+            text-align: center;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 1px 4px rgba(255,255,255,.2);
+        }
+        .input-wrap {
+            margin: 80px auto 0;
+            width: 85%;
+            .group {
+                position: relative;
+                margin-bottom: 24px;    
+                display: inline-block;
+                width: 100%;
+                input {
+                    width: 100%;
+                    height: 38px;
+                    color: #fff;
+                    background-color: rgba(255,255,255,.1);
+                    border: none;
+                    border-radius: .3rem;
+                    padding: .5rem;
+                    &:focus {
+                        background-color: #fff;
+                        color: #686868;
+                    }
+                }
+                .phonecode-text {
+                    height: 38px;
+                    line-height: 1.8;
+                    color: #999;
+                    background-color: rgba(255,255,255,.1);
+                    border: none;
+                }
+                .i-ok,.err-tip { // 成功
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    z-index: 1;
+                }
+                .err-tip { // 失败
+                    font-size: 12px;
+                    color: #ff8b08;
+                }
+                .code,.phonecode,.sendcode,.chronography { // 验证码图片,手机验证码
+                    position: absolute;
+                    right: 2px;
+                    top: 2px;
+                    width: 105px;
+                    height: 34px;
+                    font-size: 14px;
+                    line-height: 34px;
+                    text-align: center;
+                    background-color: rgba(255,255,255,.1);
+                    border-radius: 2px;
+                }
+                .sendcode {
+                    color: #999;
+                    text-align: center;
+                }
+                .chronography { // 计时
+                    color: #12aaeb;
+                }
+            }
+            .input-code,.input-phonecode { // 单独处理验证码部分
+                .i-ok,.err-tip {
+                    right: 115px;
+                }
+            }
+            .footer {
+                text-align: center;
+                .button {
+                    width: 120px;
+                    height: 38px;
+                    font-size: 18px;
+                    line-height: 38px;
+                }
+            }
+        }
+    }
+    .vip {
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+        height: auto; 
+        // &.small {
+        //     display: none;
+        // }       
+    }
+    .footer-wrap {
+        background: none;
+    }
+}
+
+/*移动端优化*/
+// @media screen and (max-width:800px) {
+//     body{
+//         .login-wrap {
+//             left: 5%;
+//             margin-left: 0;
+//             width: 90%;
+//         }
+//     }
+// }

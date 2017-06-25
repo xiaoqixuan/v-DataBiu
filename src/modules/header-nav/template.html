@@ -1,0 +1,18 @@
+<div class="header-nav">
+    <div class="logo"></div>
+    <ul class="nav">
+        <li>
+            <router-link to="/month/report-list" :class="{on:reportType=='month'}">月报</router-link>
+        </li>
+        <!--<li>
+            <router-link to="/quarter/report-list" :class="{on:reportType=='quarter'}">季报</router-link>
+        </li>
+        <li>
+            <router-link to="/halfyear/report-list" :class="{on:reportType=='halfyear'}">半年报</router-link>
+        </li>
+        <li>
+            <router-link to="/year/report-list" :class="{on:reportType=='year'}">年报</router-link>
+        </li>-->
+    </ul>
+    <div class="right">{{userInfo.companyInfo.companyName}}（{{userInfo.companyInfo.permitCode}}）</div>
+</div>

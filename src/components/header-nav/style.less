@@ -1,0 +1,36 @@
+.header-nav {
+    position: relative;
+    height: 60px;
+    background: #47AE54;
+    box-shadow: 0 2px 4px 0 #DBE2E6;
+    color: #fff;
+    .logo {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 170px;
+        height: 30px;
+        background: url(./img/logo.png) no-repeat;
+    }
+    .nav {
+        position: absolute;
+        left: 400px;
+        top: 20px;
+        display: flex;
+        li {
+            padding: 0 20px;
+        }
+        a {
+            color: #fff;
+            opacity: 0.5;
+            &.on {
+                opacity: 1;
+            }
+        }
+    }
+    .right {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}

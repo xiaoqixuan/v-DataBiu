@@ -1,0 +1,39 @@
+<div class="page-container">
+    <div class="login-banner"></div>
+    <div class="logo-wrap">
+        <span class="logo"></span>
+        <h2 class="title">排污许可执行报告</h2>
+    </div>
+    <div class="login-wrap">
+        <!-- <Input :value.sync="formItem.input" placeholder="请输入"></Input> -->
+        <div class="input">
+            <!-- 账号 -->
+            <div class="input-user group">
+                <p class="group-name">{{user.name.label}}</p>
+                <input @focus="user.name.tooltip = '';" v-model="user.name.value" class="form-control" type="text" placeholder="输入注册账号" />
+                <!-- <i v-if="user.name.isPass" class="attention-icon i-ok"></i> -->
+                <span v-if="user.name.tooltip" class="err-tip">{{user.name.tooltip}}</span>
+            </div>
+            
+            <!-- 密码 -->
+            <div class="input-password group">
+                <p class="group-name">{{user.password.label}}</p>
+                <input @focus="passwordFocus($event);" v-model="user.password.value" class="form-control" type="password" placeholder="输入8位数字密码" />
+                <!-- <i v-if="user.password.isPass" class="attention-icon i-ok"></i> -->
+                <span v-if="user.password.tooltip" class="err-tip">{{user.password.tooltip}}</span>
+            </div> 
+
+            <div class="group clearfix">
+                <label class="float-left">
+                    <input @click="user.remember.value = !user.remember.value" type="checkbox" name="remember" :value="!user.remember.value">
+                    {{user.remember.label}}
+                </label>
+                <a href="javascript:;" class="float-right color-green">登录有问题？</a>            
+            </div>           
+
+            <div class="footer">
+                <a href="javascript:;" @click="login($event);" class="btn btn-primary">登&nbsp;&nbsp;录</a>
+            </div>
+        </div>
+    </div>
+</div>

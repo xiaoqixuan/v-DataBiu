@@ -1,0 +1,113 @@
+<div class="slide-menu">
+    <div class="info">
+        <div class="tt">
+            <icon2 type="building"></icon2>
+        </div>
+        <div class="name">{{userInfo.companyInfo.companyName}}</div>
+        <div class="no">{{userInfo.companyInfo.permitCode}}</div>
+    </div>
+    <ul class="menu">
+        <li class="li" :class="{on:'/'+reportType+'/chapter01'==urlPath}" v-if="reportType=='year'||reportType=='halfyear'">
+            <router-link :to="'/'+reportType+'/chapter01/basic/'+reportId" class="text">基本生产信息</router-link>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/chapter02'==urlPath}" v-if="reportType=='year'">
+            <router-link :to="'/'+reportType+'/chapter02/'+reportId" class="text">遵守法律法规情况</router-link>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/chapter03'==urlPath}" v-if="reportType=='year'||reportType=='halfyear'">
+            <a href="javascript:;" class="text">污染防治设施运行情况</a>
+            <ul class="submenu">
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter03/normal-operation-information/'+reportId">污染治理设施正常运转信息</router-link>
+                </li>
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter03/abnormal-operation-information/'+reportId">污染治理设施异常运转信息</router-link>
+                </li>
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter03/pollution-treatment-conclusion/'+reportId">小结</router-link>
+                </li>
+            </ul>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/chapter04'==urlPath}" v-if="reportType=='year'">
+            <a href="javascript:;" class="text">自行监测情况</a>
+            <ul class="submenu">
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter04/normal-time-emissions-info/'+reportId">正常时段排放信息</router-link>
+                </li>
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter04/special-time-emissions-info/'+reportId">特殊时段排放信息</router-link>
+                </li>
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter04/self-monitoring-conclusion/'+reportId">小结</router-link>
+                </li>
+            </ul>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/chapter05'==urlPath}" v-if="reportType=='year'">
+            <a href="javascript:;" class="text">台账管理情况</a>
+            <ul class="submenu">
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter05/information/'+reportId">台账管理信息</router-link>
+                </li>
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter05/conclusion/'+reportId">小结</router-link>
+                </li>
+            </ul>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/chapter06'==urlPath}">
+            <router-link :to="'/'+reportType+'/chapter06/actual-emissions-info1/'+reportId" class="text">实际排放情况及达标判定分析</router-link>
+            <ul class="submenu">
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter06/actual-emissions-info1/'+reportId">实际排放量信息</router-link>
+                </li>
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter06/excess-emission-info/'+reportId">超标排放量信息</router-link>
+                </li>
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter06/other-emission-info/'+reportId">其他超标信息及说明</router-link>
+                </li>
+                <li class="li" v-if="reportType=='month'">
+                    <router-link :to="'/'+reportType+'/chapter06/abnormal-operation-information/'+reportId">污染治理设施异常运转信息</router-link>
+                </li>
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter06/conclusion/'+reportId">小结</router-link>
+                </li>
+            </ul>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/chapter07'==urlPath}" v-if="reportType=='year'">
+            <router-link :to="'/'+reportType+'/chapter07/information/'+reportId" class="text">排污费（环境保护税）缴纳情况</router-link>
+            <ul class="submenu">
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter07/information/'+reportId">污染物排污费（环境保护税）缴纳信息</router-link>
+                </li>
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter07/conclusion/'+reportId">小结</router-link>
+                </li>
+            </ul>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/chapter08'==urlPath}" v-if="reportType=='year'">
+            <router-link :to="'/'+reportType+'/chapter08/information/'+reportId" class="text">信息公开情况</router-link>
+            <ul class="submenu">
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter08/information/'+reportId">信息公开信息</router-link>
+                </li>
+                <li class="li">
+                    <router-link :to="'/'+reportType+'/chapter08/conclusion/'+reportId">小结</router-link>
+                </li>
+            </ul>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/chapter09'==urlPath}" v-if="reportType=='year'">
+            <router-link :to="'/'+reportType+'/chapter09/'+reportId" class="text">企业内部情况环境体系建设与运行情况</router-link>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/chapter10'==urlPath}" v-if="reportType=='year'">
+            <router-link :to="'/'+reportType+'/chapter10/'+reportId" class="text">其他排污许可证规定的内容执行情况</router-link>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/chapter11'==urlPath}" v-if="reportType=='year'">
+            <router-link :to="'/'+reportType+'/chapter11/'+reportId" class="text">其他需要说明的情况</router-link>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/chapter12'==urlPath}" v-if="reportType=='year'">
+            <router-link :to="'/'+reportType+'/chapter12/'+reportId" class="text">排污许可执行情况汇总表</router-link>
+        </li>
+        <li class="li" :class="{on:'/'+reportType+'/attachment'==urlPath}" v-if="reportType=='year'">
+            <router-link :to="'/'+reportType+'/attachment/'+reportId" class="text">附件</router-link>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,86 @@
+.slide-menu {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    .info {
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0px 1px 0px 0px #F5F5F5;
+        .tt {
+            margin: 0 auto;
+            width: 26px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            background: #30BF4F;
+            color: #fff;
+            border-radius: 13px;
+        }
+    }
+    .name {
+        margin-top: 6px;
+        color: #4D4D4D;
+    }
+    .no {
+        font-size: 12px;
+        color: #666666;
+    }
+    .menu {
+        flex: 1;
+        overflow: auto;
+        line-height: 40px;
+        >&.li {
+            height: 40px;
+        }
+        .li {
+            // height: 40px;
+            .text {
+                display: block;
+                padding-left: 30px;
+                border-left: 3px solid transparent;
+                // background: #F3FFF6;
+            }
+            &.on .text {
+                // display: block;
+                // padding-left: 50px;
+                border-color: #48AE54;
+                background: #F3FFF6;
+            }
+        }
+        a {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #737373;
+        }
+    }
+    .submenu {
+        font-size: 14px;
+        line-height: 30px;
+        .li {
+            height: 30px;
+            a {
+                position: relative;
+                display: block;
+                padding-left: 48px;
+                &.router-link-active {
+                    color: #5AB665;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 12px;
+                        left: 35px;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 5px;
+                        background: #5AB665;
+                        font-size: 0;
+                    }
+                }
+            }
+        }
+    }
+}
